@@ -1,0 +1,983 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@200&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./style.css" rel="stylesheet">
+</head>
+<body class="bg-[#1b1b1d]">
+    <nav class=" flex sticky bg-[#1b1b1d] border-b border-b[0.5px] border-solid border-b-[#353579] z-10 top-0 shadow-[0 1px 2px 0 #0000001a] h-[4.5rem] p-4">
+        <div class=" lg:flex flex-wrap justify-between w-full desktop-menus">
+            <div class=" items-center flex flex-1 min-w-0">
+                <!-- mobile-nav -->
+                <a class="items-center flex mr-4 min-w-0 text-[#e3e3e3] no-underline ">
+                    <div class="flex-[0 0 auto] h-8 mr-2">
+                        <img src="./assets/signozlogo-orange.svg" class="max-w-full h-full">
+                    </div>
+                    <b class="flex-[1 1 auto] whitespace-nowrap overflow-hidden text-ellipsis">SignNoz</b>
+                </a>
+                <a href="#" class=" font-semibold no-underline text-[#e3e3e3] inline-block px-3 py-1">Docs</a>
+                <a href="#" class=" font-semibold no-underline text-[#e3e3e3] inline-block px-3 py-1">Blog</a>
+                <a href="#" class=" font-semibold no-underline text-[#e3e3e3] inline-block px-3 py-1">OpenTelemetry</a>
+                <a href="#" class=" font-semibold no-underline text-[#e3e3e3] inline-block px-3 py-1">Pricing</a>
+            </div>
+            <div class="justify-end flex items-center min-w-0 flex-[0 0 auto]">
+                <div class="justify-center flex items-center">
+                    <iframe
+                        src="https://ghbtns.com/github-btn.html?user=tamil-5c&repo=blog&type=star&count=true&size=large"
+                        frameborder="0" scrolling="0" width="150" height="30" title="GitHub"></iframe>
+                    <a class=" bg-[#f25733] border-[#f25733] rounded-md text-[#ffffff] text-base leading-3 p-3 font-black text-center cursor-pointer inline-block shadow-[rgba(0, 0, 0, 0.1) 1px 2px 4px] "
+                        role="button">Try SigNoz Cloud</a>
+                    <a class=" inline-block text-[#e3e3e3] font-bold no-underline px-3 py-1">Customer Stories</a>
+                    <div class="pr-0">
+                        <button
+                            class="m-0 items-center bg-[#090a11] border-[0] rounded-[40px] text-[#7f8497] cursor-pointer flex h-9 justify-between px-0 py-2 ">
+                            <span class="items-center flex stroke-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20"
+                                    viewBox="0 0 64 64" style="fill:#FFFFFF;" class=" ml-[12px]">
+                                    <path
+                                        d="M 27 9 C 17.075 9 9 17.075 9 27 C 9 36.925 17.075 45 27 45 C 31.129213 45 34.9263 43.587367 37.966797 41.240234 L 51.048828 54.322266 C 51.952828 55.226266 53.418266 55.226266 54.322266 54.322266 C 55.226266 53.418266 55.226266 51.952828 54.322266 51.048828 L 41.240234 37.966797 C 43.587367 34.9263 45 31.129213 45 27 C 45 17.075 36.925 9 27 9 z M 27 13 C 34.719 13 41 19.281 41 27 C 41 34.719 34.719 41 27 41 C 19.281 41 13 34.719 13 27 C 13 19.281 19.281 13 27 13 z">
+                                    </path>
+                                </svg>
+                                <span class=" text-base pt-0 pr-3 pb-0 pl-[6px]">Search</span>
+                            </span>
+                            <span class=" flex min-w-[57px]">
+                                <!-- <kbd class=" items-center bg-[#31355b]  rounded-[3px] text-[#7f8497] flex h-[18px] justify-center mr-[0.4em] pt-0 pr-0 pb-[5px] pl-0 relative top-[-1px] w-5">ctrl</kbd> -->
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <nav role="navigation" class='mobile-nav'>
+        <div id="menuToggle">
+          <input type="checkbox"/>
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul id="menu">
+            <li><a href="#" class="text-slate-100">Docs</a></li>
+            <li><a href="#" class="text-slate-100">Blogs</a></li>
+            <li><a href="#" class="text-slate-100">OpenTelemetry</a></li>
+            <li><a href="#" class="text-slate-100">Customer Stories</a></li>
+            <li><a href="#" class="text-slate-100">Pricing</Link></a>
+          </ul>
+        </div>
+    </nav>
+    </nav>
+    <!-- body-section -->
+    <div class=" flex flex-col flex-[1 0 auto]">
+        <main>
+            <header class=" mb-16 mt-16">
+                <div class="pl-5 pr-5 flex-col flex mb-5 text-center items-center">
+                    <h1 class="text-grad lg:text-5xl section-1-mr">
+                        OpenTelemetry-Native Traces,<br>Metrics, and Logs in a single pane
+                    </h1>
+                    <h3 class=" text-[#e5e7eb] font-semibold leading-7 text-lg opacity-100 tracking-wider">
+                        SigNoz is an open source Datadog or New Relic alternative. A single tool for all your
+                        observability
+                        <br />
+                        needs - APM, logs, metrics, exceptions, alerts, and dashboards powered by a powerful query
+                        builder.
+                    </h3>
+                </div>
+                <div class=" lg:flex flex-row justify-center mb-12 ml-5 mr-5 gap-5 section-1-mr-btn">
+                    <a class=" bg-[#f25733] border-[#f25733] rounded-md text-[#ffffff] text-base leading-3 p-3 font-black text-center cursor-pointer inline-block shadow-[rgba(0, 0, 0, 0.1) 1px 2px 4px] px-12 py-4 section-1-btn "
+                        role="button">Try SigNoz Cloud</a>
+                    <a class=" border-solid border-[1px] border-[#f25733] rounded-md text-[#ffffff] text-base leading-3 p-3 font-black text-center cursor-pointer inline-block shadow-[rgba(0, 0, 0, 0.1) 1px 2px 4px] px-12 py-4 section-1-btn"
+                        role="button">Documentation</a>
+                </div>
+                <div class="containers-home">
+                    <div class="flex items-center justify-center relative">
+                        <div class=" p-2 rounded-lg justify-center max-w-4xl flex items-center container-img">
+                            <img class="rounded-lg max-w-full land-img" src="./assets/signoz-landing-snap.png">
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <section class="flex items-center mb-2 mt-2 w-full pt-6 pb-6 pr-0 pl-0">
+                <div class="w-full pt-0 pb-0 pl-4 pr-4">
+                    <div class="flex flex-col mb-5 text-center items-center">
+                        <h1 class="text-grad text-3xl font-black">Trusted by teams at</h1>
+                    </div>
+                    <ul class="flex flex-wrap justify-center mt-0 mb-0 ml-8 mr-8 trusted-section">
+                        <li
+                            class=" items-center flex justify-center lg:mt-0 lg:mr-0 lg:mb-8 lg:ml-0 lg:max-w-[25%] lg:pt-0 lg:pb-0 lg:pl-16 lg:pr-16 trusted-list">
+                            <img class="h-20 aspect-[3/2] object-contain max-w-full trusted-logo"
+                                src="./assets/netapp.png" alt="netapp">
+                        </li>
+                        <li
+                            class=" items-center flex justify-center lg:mt-0 lg:mr-0 lg:mb-8 lg:ml-0 flex-[0 0 25%] lg:max-w-[25%] lg:pt-0 lg:pb-0 lg:pl-16 lg:pr-16 trusted-list">
+                            <img class="h-20 aspect-[3/2] object-contain object-[0 50%] max-w-full trusted-logo"
+                                src="./assets/zoho.png" alt="netapp">
+                        </li>
+                        <li
+                            class=" items-center flex justify-center lg:mt-0 lg:mr-0 lg:mb-8 lg:ml-0 flex-[0 0 25%] lg:max-w-[25%] lg:pt-0 lg:pb-0 lg:pl-16 lg:pr-16 trusted-list">
+                            <img class="h-20 aspect-[3/2] object-contain object-[0 50%] max-w-full trusted-logo"
+                                src="./assets/comcast.png" alt="netapp">
+                        </li>
+                        <li
+                            class=" items-center flex justify-center lg:mt-0 lg:mr-0 lg:mb-8 lg:ml-0 flex-[0 0 25%] lg:max-w-[25%] lg:pt-0 lg:pb-0 lg:pl-16 lg:pr-16 trusted-list">
+                            <img class="h-20 aspect-[3/2] object-contain object-[0 50%] max-w-full trusted-logo"
+                                src="./assets/outplay.png" alt="netapp">
+                        </li>
+                        <li
+                            class=" items-center flex justify-center lg:mt-0 lg:mr-0 lg:mb-8 lg:ml-0 flex-[0 0 25%] lg:max-w-[25%] lg:pt-0 lg:pb-0 lg:pl-16 lg:pr-16 trusted-list">
+                            <img class="h-20 aspect-[3/2] object-contain object-[0 50%] max-w-full trusted-logo"
+                                src="./assets/wonder.png" alt="netapp">
+                        </li>
+                        <li
+                            class=" items-center flex justify-center lg:mt-0 lg:mr-0 lg:mb-8 lg:ml-0 flex-[0 0 25%] lg:max-w-[25%] lg:pt-0 lg:pb-0 lg:pl-16 lg:pr-16 trusted-list">
+                            <img class="h-20 aspect-[3/2] object-contain object-[0 50%] max-w-full trusted-logo"
+                                src="./assets/wombo.png" alt="netapp">
+                        </li>
+                        <li
+                            class=" items-center flex justify-center lg:mt-0 lg:mr-0 lg:mb-8 lg:ml-0 flex-[0 0 25%] lg:max-w-[25%] lg:pt-0 lg:pb-0 lg:pl-16 lg:pr-16 trusted-list">
+                            <img class="h-20 aspect-[3/2] object-contain object-[0 50%] max-w-full trusted-logo"
+                                src="./assets/appier.png" alt="netapp">
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <div class=" mb-16 my-10 pt-0 pb-0 pl-4 pr-4">
+                    <div class=" flex flex-col max-w-4xl mb-5 mx-auto text-center items-center">
+                        <h4 class="uppercase text-xl text-gray-300 font-semibold">explore signoz</h4>
+                        <h1 class="font-bold uppercase text-4xl text-grad p-5"> one stop observability</h1>
+                        <h3 class="text-gray-200 font-semibold text-lg">
+                            You don’t need to manage multiple tools for traces, metrics, and logs. Get great
+                            out-of-the-box charts and a powerful query builder to dig deeper into your data.
+                        </h3>
+                    </div>
+                    <div class="max-w-7xl mx-auto">
+                        <div class=" grid lg:grid-cols-6 relative mb-5 feature-tabs">
+                            <div class=" cursor-pointer rounded-t-lg flex flex-col justify-center items-center text-center h-[7vh] tab"
+                                onclick="openTab('tab1')">
+                                <p class=" font-bold text-[#9ca3af] text-sm">APM</p>
+                            </div>
+                            <div class=" cursor-pointer rounded-t-lg flex flex-col justify-center items-center text-center tab"
+                                onclick="openTab('tab2')">
+                                <p class=" font-bold text-[#9ca3af] text-sm">Distrubted Tracing</p>
+                            </div>
+                            <div class=" cursor-pointer rounded-t-lg flex flex-col justify-center items-center text-center tab"
+                                onclick="openTab('tab3')">
+                                <p class=" font-bold text-[#9ca3af] text-sm">Metrics & Dashboards</p>
+                            </div>
+                            <div class=" cursor-pointer rounded-t-lg flex flex-col justify-center items-center text-center tab"
+                                onclick="openTab('tab4')">
+                                <p class=" font-bold text-[#9ca3af] text-sm">Logs Management</p>
+                            </div>
+                            <div class=" cursor-pointer rounded-t-lg flex flex-col justify-center items-center text-center  tab"
+                                onclick="openTab('tab5')">
+                                <p class="font-bold text-[#9ca3af] text-sm">Exceptios Monitoring</p>
+                            </div>
+                            <div class=" cursor-pointer rounded-t-lg flex flex-col justify-center items-center text-center tab"
+                                onclick="openTab('tab6')">
+                                <p class="font-bold text-[#9ca3af] text-sm">Alerts</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" rounded-lg">
+                        <div class=" lg:grid lg:grid-cols-5 tab-content" id="tab1">
+                            <div class=" rounded-md relative col-span-3 ">
+                                <img src="./assets/section2/apm.png"
+                                    class=" lg:h-3/4 w-full object-contain relative z-[1] tab-imgs">
+                            </div>
+                            <div class=" px-12 lg:py-10 flex justify-center items-center col-span-2">
+                                <ul class="list-disc text-slate-100 font-semibold">
+                                    <li class="mb-2 text-lg">
+                                        Out-of-box charts for application metrics like p90, p99 latency, error rates,
+                                        request rates, etc.
+                                    </li>
+                                    <li class="mb-2 text-lg">
+                                        Monitor RED metrics for key operations in any service
+                                    </li>
+                                    <li class="mb-2 text-lg">
+                                        Monitor database and external calls made by any service
+                                    </li>
+                                    <li class="mb-2 text-lg">
+                                        Service maps to show application topology
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class=" lg:grid lg:grid-cols-5 tab-content" id="tab2">
+                            <div class=" rounded-md relative col-span-3">
+                                <img src="./assets/section2/distributed-tracing.png"
+                                    class=" lg:h-3/4 w-[93%] object-contain relative z-[1] tab-imgs">
+                            </div>
+                            <div class=" px-12 py-10 flex justify-center items-center col-span-2">
+                                <ul class="list-disc text-slate-100 font-semibold">
+                                    <li class="mb-2 text-lg">
+                                        Get end-to-end visibility of your services with rich contextual tags and
+                                        attributes.
+                                    </li>
+                                    <li class="mb-2 text-lg">
+                                        Run aggregates on trace data like sum, avg, p99 latency, etc.
+                                    </li>
+                                    <li class="mb-2 text-lg">
+                                        Group your trace data by different attributes like HTTP URL, service names, etc.
+                                        to find granular issues
+                                    </li>
+                                    <li class="mb-2 text-lg">
+                                        Flamegraphs and Gantt charts to visualize the flow of requests easily.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class=" lg:grid lg:grid-cols-5 tab-content" id="tab3">
+                            <div class=" rounded-md relative col-span-3">
+                                <img src="./assets/section2/feature-metrics-dashboards.png"
+                                    class=" lg:h-3/4 w-full object-contain relative z-[1] tab-imgs">
+                            </div>
+                            <div class=" px-12 py-10 flex justify-center items-center col-span-2">
+                                <ul class="list-disc text-slate-100 font-semibold">
+                                    <li class="mb-2 text-lg">
+                                        Out-of-box charts for application metrics like p90, p99 latency, error rates,
+                                        request rates, etc.
+                                    </li>
+                                    <li class="mb-2 text-lg">
+                                        Monitor RED metrics for key operations in any service
+                                    </li>
+                                    <li class="mb-2 text-lg">
+                                        Monitor database and external calls made by any service
+                                    </li>
+                                    <li class="mb-2 text-lg">
+                                        Service maps to show application topology
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class=" lg:grid lg:grid-cols-5 tab-content" id="tab4">
+                            <div class=" rounded-md relative col-span-3">
+                                <img src="./assets/section2/feature-log-management.png"
+                                    class=" lg:h-3/4 w-full object-contain relative z-[1] tab-imgs">
+                            </div>
+                            <div class=" px-12 py-10 flex justify-center items-center col-span-2">
+                                <ul class="list-disc text-slate-100 font-semibold">
+                                    <li class="mb-2 text-lg">
+                                        Monitor any metrics important to you.
+                                    </li>
+                                    <li class="mb-2 text-lg">
+                                        Support for OpenTelemetry metrics SDK or enable a Prometheus receiver to receive
+                                        any metrics exposed in a running Prometheus instance.
+                                    </li>
+                                    <li class="mb-2 text-lg">
+                                        Create dashboards around any use case like external calls, API endpoints, JVM
+                                        metrics - there is no limit.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class=" lg:grid lg:grid-cols-5 tab-content" id="tab5">
+                            <div class=" rounded-md relative col-span-3">
+                                <img src="./assets/section2/feature-exceptions-monitoring.png"
+                                    class=" lg:h-3/4 w-full object-contain relative z-[1] tab-imgs">
+                            </div>
+                            <div class=" px-12 py-10 flex justify-center items-center col-span-2">
+                                <ul class="list-disc text-slate-100 font-semibold">
+                                    <li class="mb-2 text-lg">
+                                        Out-of-box charts for application metrics like p90, p99 latency, error rates,
+                                        request rates, etc.
+                                    </li>
+                                    <li class="mb-2 text-lg">
+                                        Monitor RED metrics for key operations in any service
+                                    </li>
+                                    <li class="mb-2 text-lg">
+                                        Monitor database and external calls made by any service
+                                    </li>
+                                    <li class="mb-2 text-lg">
+                                        Service maps to show application topology
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class=" lg:grid lg:grid-cols-5 tab-content" id="tab6">
+                            <div class=" rounded-md relative col-span-3">
+                                <img src="./assets/section2/feature-alerts.png"
+                                    class=" lg:h-3/4 w-full object-contain relative z-[1] tab-imgs">
+                            </div>
+                            <div class=" px-12 py-10 flex justify-center items-center col-span-2">
+                                <ul class="list-disc text-slate-100 font-semibold">
+                                    <li class="mb-2 text-lg">
+                                        Easy to set alerts with DIY query builder
+                                    </li>
+                                    <li class="mb-2 text-lg">
+                                        Support for PromQL for users familiar with Prometheus alert manager
+                                    </li>
+                                    <li class="mb-2 text-lg">
+                                        Support for multiple notification channels like Slack and PagerDuty
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class=" bg-[#252529]">
+                    <div class="py-16 w-full pr-4 pl-4 mt-0 mb-0 ml-auto mr-auto">
+                        <div class="flex flex-col items-center mb-5 text-center">
+                            <h4 class="text-xl font-light uppercase text-gray-300"> SigNoz is OpenTelemetry-Native</h4>
+                            <h1 class="text-4xl font-bold text-grad mt-3">But why OpenTelemetry</h1>
+                            <h3 class="text-lg text-gray-200 font-semibold mt-4">
+                                OpenTelemetry is the second most active project in the CNCF,<br />with only kubernetes
+                                being more active
+                            </h3>
+                        </div>
+                        <div class=" grid grid-cols-1 max-w-xl mx-auto gap-y-10 gap-x-16 lg:grid-cols-2 lg:max-w-5xl">
+                            <div class=" flex gap-5 items-center flex-row-reverse lg:flex-row lg:gap-10">
+                                <img class=" h-[7rem] w-[7rem] max-w-full"
+                                    src="./assets/section3/property-no-vendor-lock-in.png">
+                                <div>
+                                    <h3 class="text-2xl font-bold text-slate-100">No Vendor lock-in</h3>
+                                    <p class="leading-relaxed text-base mb-4 text-gray-400 font-semibold">Using an open
+                                        source standard frees you from vendor lock-in.</p>
+                                </div>
+                            </div>
+                            <div class=" flex gap-5 items-center flex-row-reverse lg:flex-row lg:gap-10">
+                                <img class=" h-[7rem] w-[7rem] max-w-full"
+                                    src="./assets/section3/property-standardize-observability.png">
+                                <div>
+                                    <h3 class="text-2xl font-bold text-slate-100">Ease of use</h3>
+                                    <p class="leading-relaxed text-base mb-4 text-gray-400 font-semibold">Use
+                                        auto-instrumentation libraries of OpenTelemetry to get started with little to no
+                                        code change.</p>
+                                </div>
+                            </div>
+                            <div class=" flex gap-5 items-center flex-row-reverse lg:flex-row lg:gap-10">
+                                <img class=" h-[7rem] w-[7rem] max-w-full"
+                                    src="./assets/section3/property-ease-of-use.png">
+                                <div>
+                                    <h3 class="text-2xl font-bold text-slate-100">Covers all use-cases</h3>
+                                    <p class="leading-relaxed text-base mb-4 text-gray-400 font-semibold">OpenTelemetry
+                                        is a one-stop solution for all your telemetry needs</p>
+                                </div>
+                            </div>
+                            <div class=" flex gap-5 items-center flex-row-reverse lg:flex-row lg:gap-10">
+                                <img class=" h-[7rem] w-[7rem] max-w-full"
+                                    src="./assets/section3/property-covers-all-use-cases.png">
+                                <div>
+                                    <h3 class="text-2xl font-bold text-slate-100">Standardize Observability</h3>
+                                    <p class="leading-relaxed text-base mb-4 text-gray-400 font-semibold">A single
+                                        standard for all telemetry signals means increased developer productivity,
+                                        consistency across teams.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="overflow-hidden">
+                    <div class="relative">
+                        <div class=" px-5 py-12 mx-auto mb-0 w-full">
+                            <div class="flex flex-col items-center mb-10 text-center">
+                                <h4 class="text-xl font-light uppercase text-gray-300">Get granular control over your
+                                    observability data.</h4>
+                                <h1 class="text-4xl font-bold text-grad">Built for developers like you</h1>
+                            </div>
+                            <div class=" max-w-xl lg:max-w-3xl mx-auto">
+                                <div
+                                    class="flex flex-row-reverse gap-5 lg:gap-0 lg:grid lg:grid-cols-2 relative py-5 devs-container ">
+                                    <div class=" flex gap-10 justify-center lg:justify-start items-center w-1/5 lg:w-auto">
+                                        <img src="./assets/section4/property-query-buider.png" class="w-14 h-14 block">
+                                        <h2 class="hidden lg:block text-2xl font-semibold mb-2 text-slate-100">Query builder
+                                        </h2>
+                                    </div>
+                                    <div class="flex-shrink w-4/5 lg:w-auto">
+                                        <h2 class="block lg:hidden text-2xl font-semibold mb-2 text-slate-100">Query Builder</h2>
+                                        <p class="leading-relaxed text-slate-100">
+                                            Write queries on all telemetry signals. Run aggregates, and apply filters
+                                            and formulas to get deeper insights from your data.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex flex-row-reverse gap-5 lg:gap-0 lg:grid lg:grid-cols-2 relative py-5 devs-container ">
+                                    <div class=" flex gap-10 justify-center lg:justify-start items-center w-1/5 lg:w-auto">
+                                        <img src="./assets/section4/property-columnar-database.png" class="w-14 h-14 block">
+                                        <h2 class="hidden lg:block text-2xl font-semibold mb-2 text-slate-100">Columnar Database
+                                        </h2>
+                                    </div>
+                                    <div class="flex-shrink w-4/5 lg:w-auto">
+                                        <h2 class="block lg:hidden text-2xl font-semibold mb-2 text-slate-100">Columnar Database</h2>
+                                        <p class="leading-relaxed text-slate-100">
+                                            SigNoz uses ClickHouse - a fast open source distributed columnar database. Ingestion and aggregations are lightening fast.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex flex-row-reverse gap-5 lg:gap-0 lg:grid lg:grid-cols-2 relative py-5 devs-container ">
+                                    <div class=" flex gap-10 justify-center lg:justify-start items-center w-1/5 lg:w-auto">
+                                        <img src="./assets/section4/property-telemetry-pipeline.png" class="w-14 h-14 block">
+                                        <h2 class="hidden lg:block text-2xl font-semibold mb-2 text-slate-100">Telemetry Pipelines
+                                        </h2>
+                                    </div>
+                                    <div class="flex-shrink w-4/5 lg:w-auto">
+                                        <h2 class="block lg:hidden text-2xl font-semibold mb-2 text-slate-100">Telemetry Pipelines</h2>
+                                        <p class="leading-relaxed text-slate-100">
+                                            Build telemetry pipelines easily with SigNoz OTel Collector. Integrate any existing pipeline with OTel Collector to send data to SigNoz.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex flex-row-reverse gap-5 lg:gap-0 lg:grid lg:grid-cols-2 relative py-5 devs-container ">
+                                    <div class=" flex gap-10 justify-center lg:justify-start items-center w-1/5 lg:w-auto">
+                                        <img src="./assets/section4/property-source-code.png" class="w-14 h-14 block">
+                                        <h2 class="hidden lg:block text-2xl font-semibold mb-2 text-slate-100">Source Code
+                                        </h2>
+                                    </div>
+                                    <div class="flex-shrink w-4/5 lg:w-auto">
+                                        <h2 class="block lg:hidden text-2xl font-semibold mb-2 text-slate-100">Source Code</h2>
+                                        <p class="leading-relaxed text-slate-100">
+                                    Check out the entire source code of SigNoz on GitHub. Create issues, build features & integrations, get started without contacting any sales rep.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class=" mt-5 mb-24">
+                    <div class=" flex flex-col items-center mb-1 text-center">
+                        <h1 class=" text-4xl font-bold text-grad">
+                            Worried about data protection laws?<br />we can help
+                        </h1>
+                    </div>
+                    <div class="md:grid grid-cols-2 max-w-4xl mx-auto gap-10 my-16 relative cloud">
+                        <div class="mb-10 text-center md:text-left md:pl-5 flex flex-col justify-between gap-5">
+                            <div>
+                                <h4 class="uppercase text-gray-300 text-xl font-light">for signoz Cloud</h4>
+                                <h3 class="text-2xl font-bold text-slate-100 mt-3">
+                                    Send data to your preferred hosting location
+                                </h3>
+                                <h3 class=" text-lg font-semibold text-gray-200 mt-3">
+                                    Store your data in the US, EU or India region depending on your needs.
+                                </h3>
+                            </div>
+                            <div class="flex flex-wrap gap-5 justify-center md:justify-start">
+                                <div class="flex gap-1 flex-col justify-center items-center">
+                                    <img src="./assets/section5/us.png">
+                                    <span class="text-slate-100 font-semibold">US Cloud</span>
+                                </div>
+                                <div class="flex gap-1 flex-col justify-center items-center">
+                                    <img src="./assets/section5/eu.png">
+                                    <span class="text-slate-100 font-semibold">EU Cloud</span>
+                                </div>
+                                <div class="flex gap-1 flex-col justify-center items-center">
+                                    <img src="./assets/section5/india.png">
+                                    <span class="text-slate-100 font-semibold">India Cloud</span>
+                                </div>
+                            </div>
+                            <a class="cursor-pointer underline text-[#ff6b00] font-semibold">Try SigNoz Cloud</a>
+                        </div>
+                        <div class=" mb-10 text-center md:text-left md:pl-5 flex flex-col justify-between gap-5">
+                            <div>
+                                <h4 class="uppercase text-gray-300 text-xl font-light">for self-hosted</h4>
+                                <h3 class="text-2xl font-bold text-slate-100 mt-3">
+                                    Have your customer data in your infra
+                                </h3>
+                                <h3 class=" text-lg font-semibold text-gray-200 mt-3">
+                                    You can self-host SigNoz or opt for our managed self-hosted offerings to have
+                                    complete adherence to data privacy and regulation laws
+                                </h3>
+                            </div>
+                            <div class="flex flex-wrap gap-5 justify-center md:justify-start">
+                                <div class="flex gap-1 flex-col justify-center items-center">
+                                    <img src="./assets/section5/data-privacy.png">
+                                    <span class="text-slate-100 font-semibold">Data Privacy</span>
+                                </div>
+                            </div>
+                            <div
+                                class="flex flex-col lg:flex-row items-center md:items-start gap-5 md:gap-0 lg:justify-between">
+                                <a class="cursor-pointer underline text-[#ff6b00] font-semibold">Self Host</a>
+                                <a class="cursor-pointer underline text-[#ff6b00] font-semibold">Managed by SigNoz in
+                                    Your Cloud</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class=" mt-16">
+                    <div class="flex flex-col items-center mb-5 text-center">
+                        <h4 class="text-xl font-normal uppercase text-gray-300">Enterprise Grade Observability</h4>
+                        <h1 class="text-4xl font-bold text-grad">
+                            Get access to observability at any scale<br />
+                            with advanced security and complicance
+                        </h1>
+                    </div>
+                    <div class="max-w-2xl mx-auto">
+                        <div
+                            class="bg-[#252529] grid grid-cols-1 md:grid-cols-2 md:gap-10 mx-auto rounded-lg px-10 py-8 pricing-plans-container">
+                            <div>
+                                <ul class="m-0 list-none pl-8 relative list-style-planning">
+                                    <li class="py-3 text-lg text-slate-100">SSO and SAML Support</li>
+                                    <li class="py-3 text-lg text-slate-100">Query API Keys</li>
+                                    <li class="py-3 text-lg text-slate-100">Advanced security</li>
+                                    <li class="py-3 text-lg text-slate-100">AWS Private Link</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <div class="flex flex-col justify-between h-full">
+                                    <ul class="m-0 list-style-planning pl-8">
+                                        <li class="py-3 text-lg text-slate-100">VPC Peering</li>
+                                        <li class="py-3 text-lg text-slate-100">Custom integrations</li>
+                                    </ul>
+                                    <a class=" bg-[#f25733] border-[#f25733] rounded-md text-[#ffffff] text-base px-8 py-2 font-black text-center cursor-pointer inline-block shadow-[rgba(0, 0, 0, 0.1) 1px 2px 4px] "
+                                        role="button">Check Plans</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class=" px-5 py-24 mx-auto">
+                    <div class="flex flex-col justify-center items-center mb-10 text-center">
+                        <h1 class=" text-4xl font-bold text-grad mb-4">Pricing you can trust</h1>
+                        <h3 class=" text-lg font-semibold text-gray-200">
+                            Tired of Datadog’s unpredictable bills or New Relic’s user-based pricing? <br />we're here
+                            for you
+                        </h3>
+                    </div>
+                    <div class=" flex flex-wrap mf:max-w-md lg:max-w-5xl mx-auto gap-y-5 justify-center">
+                        <div class="md:w-full lg:w-1/3 xl:w-1/3 px-8 py-1 price-card">
+                            <h3 class=" text-2xl font-bold text-slate-100 mb-4">No user-based Pricing</h3>
+                            <p class="leading-relaxed text-base mb-4 text-gray-400">Add as many team members as you
+                                want.</p>
+                        </div>
+                        <div class="md:w-full lg:w-1/3 xl:w-1/3 px-8 py-1 price-card">
+                            <h3 class=" text-2xl font-bold text-slate-100 mb-4">Simple usage-based pricing</h3>
+                            <p class="leading-relaxed text-base mb-4 text-gray-400">Only pay for the data you send.</p>
+                        </div>
+                        <div class="md:w-full lg:w-1/3 xl:w-1/3 px-8 py-1 price-card">
+                            <h3 class=" text-2xl font-bold text-slate-100 mb-4">No special pricing for custom metrics
+                            </h3>
+                            <p class="leading-relaxed text-base mb-4 text-gray-400">All metrics charged simply at $0.1
+                                per million samples.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class=" py-16 bg-[#252529]">
+                    <div class="containers">
+                        <div class="flex flex-col justify-center items-center mb-10 text-center">
+                            <h1 class="text-4xl font-bold text-grad">
+                                Developers
+                                <span class="heart-emoji">❤️</span>
+                                open source SigNoz
+                            </h1>
+                            <h3 class="text-lg text-gray-200 font-semibold">Join our huge open source community and nerd
+                                about observability</h3>
+                        </div>
+                        <div class="mx-auto max-w-7xl px-6 lg:px-8 mb-16">
+                            <div class="grid grid-cols-2 gap-x-8 gap-y-16 text-center lg:grid-cols-4">
+                                <div class="mx-auto flex max-w-xs flex-col gap-y-4 justify-center">
+                                    <div class="text-2xl leading-7 text-white font-semibold">Downloads</div>
+                                    <div
+                                        class=" order-first text-2xl font-semibold tracking-tight sm:text-5xl text-white">
+                                        4M</div>
+                                </div>
+                                <div class="mx-auto flex max-w-xs flex-col gap-y-4 justify-center">
+                                    <div class="text-2xl leading-7 text-white font-semibold">GitHub stars</div>
+                                    <div
+                                        class=" order-first text-2xl font-semibold tracking-tight sm:text-5xl text-white">
+                                        14k+</div>
+                                </div>
+                                <div class="mx-auto flex max-w-xs flex-col gap-y-4 justify-center">
+                                    <div class="text-2xl leading-7 text-white font-semibold">Contributors</div>
+                                    <div
+                                        class=" order-first text-2xl font-semibold tracking-tight sm:text-5xl text-white">
+                                        100+</div>
+                                </div>
+                                <div class="mx-auto flex max-w-xs flex-col gap-y-4 justify-center">
+                                    <div class="text-2xl leading-7 text-white font-semibold">Community Members</div>
+                                    <div
+                                        class=" order-first text-2xl font-semibold tracking-tight sm:text-5xl text-white">
+                                        3k+</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-center">
+                            <a class=" rounded-md text-[#ffffff] text-base px-8 py-2 font-black text-center cursor-pointer inline-block shadow-[rgba(0, 0, 0, 0.1) 1px 2px 4px] button-shadow"
+                                role="button">Join our slack community</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="my-8">
+                    <div class="flex flex-col items-center mb-5 text-center">
+                        <h4 class="text-xl font-normal mb-4 uppercase text-gray-300 ">testimonials</h4>
+                        <h1 class=" text-4xl font-black text-grad">We love what people are saying about SigNoz</h1>
+                    </div>
+                    <div class="flex flex-wrap" style="margin: 0 1rem;">
+                        <div class="twitter-card">
+                            <div class="mt-0 mb-0 ml-4 mr-4">
+                                <div class="m-2 w-full">
+                                    <div class="card">
+                                        <div class="px-4 py-4">
+                                            <div class=" flex gap-x-[1rem]">
+                                                <img src="./assets/twitter-card/aloysius.webp" class="avatar">
+                                                <div class="twitter-content">
+                                                    <h4 class=" text-base text-slate-100 font-semibold">Pawan Bhadauria
+                                                    </h4>
+                                                    <small class="mt-1 text-slate-100 font-normal">VP - Engineering,
+                                                        Outplay</small>
+                                                </div>
+                                                <a class="no-underline text-[#f99781] cursor-pointer" href="#">
+                                                    <img src="./assets/twitter-card/icons8-linkedin-48.png">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="p-4">
+                                            <p class="text-slate-100 font-semibold">We are using Signoz at Outplay & our
+                                                experience has been great. It has 5.4k stars on Github.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-0 mb-0 ml-4 mr-4">
+                                <div class="m-2 w-full">
+                                    <div class="card">
+                                        <div class="px-4 py-4">
+                                            <div class=" flex gap-x-[1rem]">
+                                                <img src="./assets/twitter-card/aditya-tripathi.webp" class="avatar">
+                                                <div class="twitter-content">
+                                                    <h4 class=" text-base text-slate-100 font-semibold">Aditya Tripathi
+                                                    </h4>
+                                                    <small class="mt-1 text-slate-100 font-normal">Founder & CEO at
+                                                        Climactic</small>
+                                                </div>
+                                                <a class="no-underline text-[#f99781] cursor-pointer" href="#">
+                                                    <img src="./assets/twitter-card/icons8-linkedin-48.png">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="p-4">
+                                            <p class="text-slate-100 font-semibold">It was a breeze working with SigNoz!
+                                                The team has also been very helpful. Good product!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-0 mb-0 ml-4 mr-4">
+                                <div class="m-2 w-full">
+                                    <div class="card">
+                                        <div class="px-4 py-4">
+                                            <div class=" flex gap-x-[1rem]">
+                                                <img src="./assets/twitter-card/aloysius.webp" class="avatar">
+                                                <div class="twitter-content">
+                                                    <h4 class=" text-base text-slate-100 font-semibold">Aloysius Coelho
+                                                    </h4>
+                                                    <small class="mt-1 text-slate-100 font-normal">IT Infrastructure
+                                                        Engineer</small>
+                                                </div>
+                                                <a class="no-underline text-[#f99781] cursor-pointer" href="#">
+                                                    <img src="./assets/twitter-card/icons8-linkedin-48.png">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="p-4">
+                                            <p class="text-slate-100 font-semibold">SigNoz - Serious consideration over
+                                                Grafana and WatchDog.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="twitter-card">
+                            <div class="mt-0 mb-0 ml-4 mr-4">
+                                <div class="m-2 w-full">
+                                    <div class="card">
+                                        <div class="px-4 py-4">
+                                            <div class=" flex gap-x-[1rem]">
+                                                <img src="./assets/twitter-card/anselm.jpg" class="avatar">
+                                                <div class="twitter-content">
+                                                    <h4 class=" text-base text-slate-100 font-semibold">Anselm Eickhoff
+                                                    </h4>
+                                                    <small class="mt-1 text-slate-100 font-normal">Software
+                                                        Architect</small>
+                                                </div>
+                                                <a class="no-underline text-[#f99781] cursor-pointer" href="#">
+                                                    <img src="./assets/twitter-card/icons8-twitter-48.png">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="p-4">
+                                            <p class="text-slate-100 font-semibold leading-7">NewRelic: receiving
+                                                OpenTelemetry at all takes me 1/2 day to grok, docs are a mess. Traces
+                                                show up after 5min. I burn the free 100GB/mo in 1 day of light testing.
+                                                @SignozHQ: can run it locally (∞GB), has a special tutorial for
+                                                OpenTelemetry + Rust! Traces show up immediately.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-0 mb-0 ml-4 mr-4">
+                                <div class="m-2 w-full">
+                                    <div class="card">
+                                        <div class="px-4 py-4">
+                                            <div class=" flex gap-x-[1rem]">
+                                                <img src="./assets/twitter-card/rachid.webp" class="avatar">
+                                                <div class="twitter-content">
+                                                    <h4 class=" text-base text-slate-100 font-semibold">Rachid Zarouali
+                                                    </h4>
+                                                    <small class="mt-1 text-slate-100 font-normal">Docker Captain,
+                                                        Microsoft Azure MVP</small>
+                                                </div>
+                                                <a class="no-underline text-[#f99781] cursor-pointer" href="#">
+                                                    <img src="./assets/twitter-card/icons8-linkedin-48.png">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="p-4">
+                                            <p class="text-slate-100 font-semibold leading-6">A new and yet powerful
+                                                #observability #opensource alternative has born in the name of SigNoz.
+                                                It could offer a serious challenger to Datadog / New Relic and other
+                                                SaaS solutions</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="twitter-card">
+                            <div class="mt-0 mb-0 ml-4 mr-4">
+                                <div class="m-2 w-full">
+                                    <div class="card">
+                                        <div class="px-4 py-4">
+                                            <div class=" flex gap-x-[1rem]">
+                                                <img src="./assets/twitter-card/apoorva-kumar.webp" class="avatar">
+                                                <div class="twitter-content">
+                                                    <h4 class=" text-base text-slate-100 font-semibold">Apoorva Kumar
+                                                    </h4>
+                                                    <small class="mt-1 text-slate-100 font-normal">Lead Backend Infra
+                                                        Eng, NuCash</small>
+                                                </div>
+                                                <a class="no-underline text-[#f99781] cursor-pointer" href="#">
+                                                    <img src="./assets/twitter-card/icons8-linkedin-48.png">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="p-4">
+                                            <p class="text-slate-100 font-semibold leading-7">Just deployed SigNoz to an
+                                                EKS cluster.Still can't believe this is free, everything works like a
+                                                charm. I am really really impressed with the documentation and
+                                                dashboard.<br /><br />
+                                                Still in awe. Sneak peek into running the product, you can easily set
+                                                retention period for metrics, traces and logs with one click and set
+                                                cold storage for old logs to s3 with few config changes.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-0 mb-0 ml-4 mr-4">
+                                <div class="m-2 w-full">
+                                    <div class="card">
+                                        <div class="px-4 py-4">
+                                            <div class=" flex gap-x-[1rem]">
+                                                <img src="./assets/twitter-card/rachid.webp" class="avatar">
+                                                <div class="twitter-content">
+                                                    <h4 class=" text-base text-slate-100 font-semibold">Faris Hassan
+                                                    </h4>
+                                                    <small class="mt-1 text-slate-100 font-normal">Lead Data
+                                                        Scientist</small>
+                                                </div>
+                                                <a class="no-underline text-[#f99781] cursor-pointer" href="#">
+                                                    <img src="./assets/twitter-card/icons8-twitter-48.png">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="p-4">
+                                            <p class="text-slate-100 font-semibold leading-6">What's better than
+                                                #datadog? Open source! I know @SignozHQ what else out there? #opensource
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="my-16 m-[0 auto]">
+                    <div class="flex flex-col items-center mb-5 text-center">
+                        <h4 class="text-xl font-semibold uppercase text-gray-300">Read About</h4>
+                        <h1 class="text-4xl font-bold text-grad">Latest in OpenTelemetry</h1>
+                    </div>
+                    <div class="flex flex-wrap" style="margin: 0 1rem;">
+                        <div class="twitter-card">
+                            <div class="m-2">
+                                <div class="rounded-lg utube-grad">
+                                    <div class="p-0">
+                                        <div class="flex flex-col gap-5">
+                                            <link rel="preconnect"
+                                                href="https://i.ytimg.com/vi_webp/Wzut0kjVeYI/maxresdefault.webp"
+                                                as="image">
+                                            <link rel="preconnect" href="https://www.youtube-nocookie.com">
+                                            <link rel="preconnect" href="https://www.google.com">
+                                            <link rel="preconnect" href="https://static.doubleclick.net">
+                                            <link rel="preconnect" href="https://googleads.g.doubleclick.net">
+                                            <div class="utube-module">
+                                                <img src="./assets/youtube-card/maxresdefault.webp"
+                                                    class="absolute w-full h-full left-0 object-cover">
+                                                <div class="playbutton"></div>
+                                            </div>
+                                            <p class="px-5 text-ellipsis line-clamp-2 text-slate-200 font-bold mb-4">
+                                                OpenTelemetry Webinars: Getting started with OpenTelemetry.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="twitter-card">
+                            <div class="m-2">
+                                <div class="rounded-lg utube-grad">
+                                    <div class="p-0">
+                                        <div class="flex flex-col gap-5">
+                                            <link rel="preconnect"
+                                                href="https://i.ytimg.com/vi_webp/Wzut0kjVeYI/maxresdefault.webp"
+                                                as="image">
+                                            <link rel="preconnect" href="https://www.youtube-nocookie.com">
+                                            <link rel="preconnect" href="https://www.google.com">
+                                            <link rel="preconnect" href="https://static.doubleclick.net">
+                                            <link rel="preconnect" href="https://googleads.g.doubleclick.net">
+                                            <div class="utube-module">
+                                                <img src="./assets/youtube-card/gahter.webp"
+                                                    class="absolute w-full h-full left-0 object-cover">
+                                                <div class="playbutton"></div>
+                                            </div>
+                                            <p class="px-5 text-ellipsis line-clamp-2 text-slate-200 font-bold mb-10">
+                                                Gathering data with the OpenTelemetry Collector.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="twitter-card">
+                            <div class="m-2">
+                                <div class="rounded-lg utube-grad">
+                                    <div class="p-0">
+                                        <div class="flex flex-col gap-5">
+                                            <link rel="preconnect"
+                                                href="https://i.ytimg.com/vi_webp/Wzut0kjVeYI/maxresdefault.webp"
+                                                as="image">
+                                            <link rel="preconnect" href="https://www.youtube-nocookie.com">
+                                            <link rel="preconnect" href="https://www.google.com">
+                                            <link rel="preconnect" href="https://static.doubleclick.net">
+                                            <link rel="preconnect" href="https://googleads.g.doubleclick.net">
+                                            <div class="utube-module">
+                                                <img src="./assets/youtube-card/opent.webp"
+                                                    class="absolute w-full h-full left-0 object-cover">
+                                                <div class="playbutton"></div>
+                                            </div>
+                                            <p class="px-5 text-ellipsis line-clamp-2 text-slate-200 font-bold mb-4">
+                                                Implementing Distributed Tracing in a NodeJS Application using
+                                                OpenTelemetry</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="utube-grad py-16">
+                <div class=" w-full pt-0 pb-0 pl-4 pr-4 mt-0 mb-auto ml-0 mr-0">
+                    <div class=" mx-auto max-w-xl">
+                        <div>
+                            <h2 class="font-bold text-3xl text-grad leading-9 tracking-wider">OpenTelemetry-Native
+                                Metrics, Logs,<br />and Traces in a single pane of glass</h2>
+                            <h3 class="text-xl text-gray-200 font-normal">Check out our hosted and enterprise solutions.
+                            </h3>
+                        </div>
+                        <div class=" flex gap-5 flex-col sm:flex-row mt-8">
+                            <a class=" bg-[#f25733] border-[#f25733] rounded-md text-[#ffffff] text-base leading-3 p-3 font-black text-center cursor-pointer inline-block shadow-[rgba(0, 0, 0, 0.1) 1px 2px 4px] px-12 py-4 "
+                                role="button">Try SigNoz Cloud</a>
+                            <a class=" border-solid border-[2px] border-[#f25733] rounded-md text-[#ffffff] text-base leading-3 p-3 font-black text-center cursor-pointer inline-block shadow-[rgba(0, 0, 0, 0.1) 1px 2px 4px] px-12 py-4"
+                                role="button">Documentation</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer class=" bg[#242526] px-8 py-8 ">
+        <div class=" px-2 sm:px-10 md:p-5">
+            <div class=" flex flex-col-reverse gap-10 lg:gap-0 lg:grid grid-cols-12">
+                <div class="col-span-4">
+                    <div class=" flex flex-col md:flex-row-reverse justify-between md:items-center gap-7 w-full">
+                        <!-- <div class=" block lg:hidden w-auto md:w-2/3"></div> -->
+                        <div class=" flex flex-col gap-5 w-full">
+                            <img src="./assets/footer/footer-logo.png" class="object-contain w-28 max-w-full">
+                            <form
+                                class=" h-10 flex flex-nowrap rounded-sm overflow-hidden gap-0 w-full sm:w-1/2 md:w-full lg:block">
+                                <input name="email" required placeholder="Type your email"
+                                    class="h-10 placeholder:text-gray-400 text-gray-900 text-sm px-2 pr-1 font-normal leading-loose bg-white rounded-none border-none w-8/12 sub-input ">
+                                <button type="submit"
+                                    class="h-10 border-none outline-none text-sm rounded-none bg-[#dd5031] cursor-pointer text-slate-100 max-w-full pb-[10] pl-[30px] pr-[30px] m-[-5px]">subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-8">
+                    <div class="grid grid-cols-2 md:flex md:justify-between lg:justify-around">
+                        <div class="flex-col justify-start items-start gap-1 inline-flex">
+                            <div class="footer-title font-bold text-xl">Docs</div>
+                            <ul class="mb-0 pl-0 list-none text-gray-400 font-semibold leading-8 cursor-pointer">
+                                <li class="mt-0 hover:text-[#dd5031] hover:underline hover:duration-700">Introduction
+                                </li>
+                                <li class="mt-0 hover:text-[#dd5031] hover:underline hover:duration-700">contributing
+                                </li>
+                                <li class="mt-0 hover:text-[#dd5031] hover:underline hover:duration-700">knowledge Base
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex-col justify-start items-start gap-1 inline-flex">
+                            <div class="footer-title font-bold text-xl">Community</div>
+                            <ul class="mb-0 pl-0 list-none text-gray-400 font-semibold leading-8 cursor-pointer">
+                                <li class="mt-0  hover:text-[#dd5031] hover:underline hover:duration-700">Slack</li>
+                                <li class="mt-0 hover:text-[#dd5031] hover:underline hover:duration-700">Twitter</li>
+                                <li class="mt-0 hover:text-[#dd5031] hover:underline hover:duration-700">support</li>
+                                <li class="mt-0 hover:text-[#dd5031] hover:underline hover:duration-700">Learn</li>
+                                <li class="mt-0 hover:text-[#dd5031] hover:underline hover:duration-700">Community
+                                    Archive</li>
+                            </ul>
+                        </div>
+                        <div class="flex-col justify-start items-start gap-1 inline-flex">
+                            <div class="footer-title font-bold text-xl">More</div>
+                            <ul class="mb-0 pl-0 list-none text-gray-400 font-semibold leading-8 cursor-pointer ">
+                                <li class="mt-0 hover:text-[#dd5031] hover:underline hover:duration-700">SigNoz vs
+                                    Datadog</li>
+                                <li class="mt-0 hover:text-[#dd5031] hover:underline hover:duration-700">SigNoz vs New
+                                    Relic</li>
+                                <li class="mt-0 hover:text-[#dd5031] hover:underline hover:duration-700">SigNoz vs
+                                    Grafana</li>
+                                <li class="mt-0 hover:text-[#dd5031] hover:underline hover:duration-700">SigNoz vs
+                                    Dynatrace</li>
+                                <li class="mt-0 hover:text-[#dd5031] hover:underline hover:duration-700">Carrers</li>
+                                <li class="mt-0 hover:text-[#dd5031] hover:underline hover:duration-700">Terms</li>
+                                <li class="mt-0 hover:text-[#dd5031] hover:underline hover:duration-700">About</li>
+                                <li class="mt-0 hover:text-[#dd5031] hover:underline hover:duration-700">Privacy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>
